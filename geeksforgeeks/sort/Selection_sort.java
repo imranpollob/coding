@@ -18,12 +18,12 @@ public class Selection_sort {
 
 
     public static void main(String[] args) {
-        int arr[] = {12, 5, 1, 3, 4, 66, 99, 17, 7};
+        int[] arr = {12, 5, 1, 3, 4, 66, 99, 17, 7};
 
         int[] sorted_arr = sort(arr);
 
-        for (int i = 0; i < sorted_arr.length; i++) {
-            System.out.println(sorted_arr[i]);
+        for (int j : sorted_arr) {
+            System.out.println(j);
         }
 
     }
