@@ -8,7 +8,9 @@ Example:
 
 ```
 geeksforgeeks/
-	sort/
-		Bubble_sort.java // java file contains code
-		Bubble_sort.md   // md file contains explanation
+	sorting/
+		BubbleSort/
+			src/
+				BubbleSort.java
+				bubble sort.md
 ```
