@@ -1,6 +1,16 @@
-package geeksforgeeks.sort;
 
-public class Selection_sort {
+public class SelectionSort {
+
+	public static void main(String[] args) {
+        int[] arr = {12, 5, 1, 3, 4, 66, 99, 17, 7};
+
+        int[] sorted_arr = sort(arr);
+
+        for (int j : sorted_arr) {
+            System.out.println(j);
+        }
+	}
+	
     public static int[] sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             int min_index = i;
@@ -16,15 +26,4 @@ public class Selection_sort {
         return arr;
     }
 
-
-    public static void main(String[] args) {
-        int[] arr = {12, 5, 1, 3, 4, 66, 99, 17, 7};
-
-        int[] sorted_arr = sort(arr);
-
-        for (int j : sorted_arr) {
-            System.out.println(j);
-        }
-
-    }
 }
