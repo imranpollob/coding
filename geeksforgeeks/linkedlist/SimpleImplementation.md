@@ -1,0 +1,1 @@
+![](https://beginnersbook.com/wp-content/uploads/2013/12/singly_linkedlist.png)
