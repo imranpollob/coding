@@ -32,6 +32,40 @@ public class InsertInBinarySearchTree {
 		insert(root, 18);
 		insert(root, 9);
 		insert(root, 11);
+		iterativeInsert(root, 16);
+		iterativeInsert(root, 29);
+		iterativeInsert(root, 25);
+	}
+
+	private static Node iterativeInsert(Node root, int key) {
+		Node temp = new Node(key);
+		Node cur = root;
+		Node parent = null;
+		
+		while(cur != null) {
+			// parent is the pointer to the last leaf node before inserting
+			parent = cur;
+			
+			if (key < cur.value) {
+				cur = cur.left;
+			} else if (key > cur.value) {
+				cur = cur.right;
+			}
+		}
+		
+		if (parent == null) {
+			return temp;
+		} 
+		
+		if (key < parent.value) {
+			parent.left = temp;
+		} else if (key > parent.value) {
+			parent.right = temp;
+		}
+		
+		// returning root as parent already have connection with root
+		// because parent is created from cur, and cur was created from root
+		return root;
 	}
 
 	private static Node insert(Node root, int key) {
@@ -51,5 +85,7 @@ public class InsertInBinarySearchTree {
 		
 		return root;
 	}
+	
+	
 
 }
