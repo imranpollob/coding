@@ -38,6 +38,10 @@ public class SinglyLinkedList {
 		System.out.println("List");
 		listNodesRecursively(new_head2);
 
+		new_head2 = remove(new_head2, 70);
+		System.out.println("List again");
+		listNodes(new_head2);
+
 		System.out.println("Removing from the first");
 		new_head2 = removeFirst(new_head2);
 		listNodes(new_head2);
@@ -50,6 +54,30 @@ public class SinglyLinkedList {
 		System.out.println("Removing from the last");
 		new_head2 = removeLast(new_head2);
 		listNodes(new_head2);
+	}
+
+	private static Node remove(Node head, int key) {
+		Node cur = head;
+		Node prev = null;
+
+		if (cur == null) {
+			return null;
+		}
+
+		if (head.value == key) {
+			return head.next;
+		}
+
+		while (cur != null) {
+			if (cur.value == key) {
+				prev.next = cur.next;
+				break;
+			}
+			prev = cur;
+			cur = cur.next;
+		}
+
+		return head;
 	}
 
 	private static Node removeFirst(Node head) {
