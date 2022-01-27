@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BreathFirstSearch {
 
@@ -27,7 +30,37 @@ public class BreathFirstSearch {
 		addEdge(adjacencyList, 6, 4);
 		addEdge(adjacencyList, 6, 5);
 		
-		printGraph(adjacencyList);
+//		printGraph(adjacencyList);
+		
+		bfs(adjacencyList, 1);
+	}
+
+	private static void bfs(ArrayList<ArrayList<Integer>> adjacencyList, int root) {
+		Queue<Integer> queue = new LinkedList<Integer>();
+		
+		int[] visited = new int[adjacencyList.size()];
+		
+		for (int i = 0; i < visited.length; i++) {
+			visited[i] = 0;
+		}
+		
+		queue.add(root);
+		
+		while (!queue.isEmpty()) {
+			int head = queue.poll();
+			visited[head] = 1;
+			System.out.println(head + " ");
+			for (int i = 0; i < adjacencyList.get(head).size(); i ++) {
+				int node = adjacencyList.get(head).get(i);
+				if (visited[node] == 0) {
+					visited[node] = 1;
+					queue.add(node);
+				}
+			}
+		}
+		
+		
+		
 	}
 
 	private static void printGraph(ArrayList<ArrayList<Integer>> adjacencyList) {
