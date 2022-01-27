@@ -24,7 +24,22 @@ public class DepthFirstSearch {
 
 		System.out.println("DFS: ");
 		dfs(adjacencyList, 1);
+		System.out.println("\nDFS Recursive: ");
+		boolean[] visited = new boolean[adjacencyList.size()];
+		dfsRec(adjacencyList, 1, visited);
+	}
 
+	private static void dfsRec(ArrayList<ArrayList<Integer>> adjacencyList, int node, boolean[] visited) {
+		// As its a void method so no base return case is needed
+		visited[node] = true;
+		System.out.print(node + " ");
+
+		for (int i = 0; i < adjacencyList.get(node).size(); i++) {
+			int temp = adjacencyList.get(node).get(i);
+			if (visited[temp] == false) {
+				dfsRec(adjacencyList, temp, visited);
+			}
+		}
 	}
 
 	private static void dfs(ArrayList<ArrayList<Integer>> adjacencyList, int root) {
