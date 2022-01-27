@@ -1,12 +1,12 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
-public class BreathFirstSearch {
+public class DepthFirstSearch {
 
 	public static void main(String[] args) {
-		int total_vertices = 6;
+		int total_vertices = 7;
 		ArrayList<ArrayList<Integer>> adjacencyList = new ArrayList<ArrayList<Integer>>(total_vertices + 1);
 
 		for (int i = 0; i <= total_vertices; i++) {
@@ -15,48 +15,50 @@ public class BreathFirstSearch {
 
 		addEdge(adjacencyList, 1, 2);
 		addEdge(adjacencyList, 1, 3);
-		addEdge(adjacencyList, 2, 1);
 		addEdge(adjacencyList, 2, 4);
 		addEdge(adjacencyList, 2, 5);
-		addEdge(adjacencyList, 3, 1);
-		addEdge(adjacencyList, 3, 5);
-		addEdge(adjacencyList, 4, 2);
-		addEdge(adjacencyList, 4, 5);
-		addEdge(adjacencyList, 4, 6);
-		addEdge(adjacencyList, 5, 2);
-		addEdge(adjacencyList, 5, 3);
-		addEdge(adjacencyList, 5, 4);
-		addEdge(adjacencyList, 5, 6);
-		addEdge(adjacencyList, 6, 4);
-		addEdge(adjacencyList, 6, 5);
+		addEdge(adjacencyList, 3, 6);
+		addEdge(adjacencyList, 3, 7);
 
 		printGraph(adjacencyList);
 
-		System.out.println("BFS: ");
-		bfs(adjacencyList, 1);
+		System.out.println("DFS: ");
+		dfs(adjacencyList, 1);
+
 	}
 
-	private static void bfs(ArrayList<ArrayList<Integer>> adjacencyList, int root) {
-		Queue<Integer> queue = new LinkedList<Integer>();
-
+	private static void dfs(ArrayList<ArrayList<Integer>> adjacencyList, int root) {
+		Stack<Integer> stack = new Stack<>();
 		int[] visited = new int[adjacencyList.size()];
 
 		for (int i = 0; i < visited.length; i++) {
 			visited[i] = 0;
 		}
 
-		queue.add(root);
+		stack.push(root);
 
-		while (!queue.isEmpty()) {
-			int head = queue.poll();
-			visited[head] = 1;
-			System.out.print(head + " ");
-			for (int i = 0; i < adjacencyList.get(head).size(); i++) {
-				int node = adjacencyList.get(head).get(i);
+		while (!stack.isEmpty()) {
+			int tail = stack.lastElement();
+
+			if (visited[tail] == 0) {
+				System.out.print(tail + " ");
+				visited[tail] = 1;
+			}
+
+			int flag = 0;
+
+			for (int i = 0; i < adjacencyList.get(tail).size(); i++) {
+				int node = adjacencyList.get(tail).get(i);
+
 				if (visited[node] == 0) {
-					visited[node] = 1;
-					queue.add(node);
+					stack.push(node);
+					flag = 1;
+					break;
 				}
+			}
+
+			if (flag == 0) {
+				stack.pop();
 			}
 		}
 	}
