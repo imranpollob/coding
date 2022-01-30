@@ -46,10 +46,6 @@ public class DepthFirstSearch {
 		Stack<Integer> stack = new Stack<>();
 		int[] visited = new int[adjacencyList.size()];
 
-		for (int i = 0; i < visited.length; i++) {
-			visited[i] = 0;
-		}
-
 		stack.push(root);
 
 		while (!stack.isEmpty()) {

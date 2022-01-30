@@ -38,12 +38,7 @@ public class BreathFirstSearch {
 
 	private static void bfs(ArrayList<ArrayList<Integer>> adjacencyList, int root) {
 		Queue<Integer> queue = new LinkedList<Integer>();
-
 		int[] visited = new int[adjacencyList.size()];
-
-		for (int i = 0; i < visited.length; i++) {
-			visited[i] = 0;
-		}
 
 		queue.add(root);
 
