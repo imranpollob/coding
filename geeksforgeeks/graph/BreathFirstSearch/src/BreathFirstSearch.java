@@ -12,7 +12,9 @@ public class BreathFirstSearch {
 		for (int i = 0; i <= total_vertices; i++) {
 			adjacencyList.add(new ArrayList<Integer>());
 		}
-
+		
+		// we are explicitly defining the paths
+		// like defining a edge from 1 to 2 and a edge from 2 to 1
 		addEdge(adjacencyList, 1, 2);
 		addEdge(adjacencyList, 1, 3);
 		addEdge(adjacencyList, 2, 1);

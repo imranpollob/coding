@@ -15,10 +15,14 @@ public class UnweightedShortestPath {
 		
 		addEdge(graph, 0, 1);
 		addEdge(graph, 0, 2);
+		addEdge(graph, 1, 0);
 		addEdge(graph, 1, 2);
 		addEdge(graph, 1, 3);
+		addEdge(graph, 2, 0);
+		addEdge(graph, 2, 1);
 		addEdge(graph, 2, 3);
-		addEdge(graph, 3, 0);
+		addEdge(graph, 3, 1);
+		addEdge(graph, 3, 2);
 		
 		printGraph(graph);
 //		System.out.println(graph);

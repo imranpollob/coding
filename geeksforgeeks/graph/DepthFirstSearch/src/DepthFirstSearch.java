@@ -13,6 +13,8 @@ public class DepthFirstSearch {
 			adjacencyList.add(new ArrayList<Integer>());
 		}
 
+		// we are implicitly defining the paths
+		// only defining a edge from 1 to 2 with also create a edge from 2 to 1  
 		addEdge(adjacencyList, 1, 2);
 		addEdge(adjacencyList, 1, 3);
 		addEdge(adjacencyList, 2, 4);
@@ -85,7 +87,9 @@ public class DepthFirstSearch {
 	}
 
 	private static void addEdge(ArrayList<ArrayList<Integer>> adjacencyList, int source, int destination) {
+		// for a unweighted graph we can draw a path from both direction
 		adjacencyList.get(source).add(destination);
+		adjacencyList.get(destination).add(source);
 	}
 
 }
