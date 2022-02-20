@@ -39,6 +39,73 @@ public class SinglyLinkedListNonStatic {
         System.out.println("Insert at position 1");
         sll.insert(1, 100);
         sll.list();
+
+        System.out.println("Search for 100 and 5");
+        sll.search(100);
+        sll.search(5);
+        sll.callSearchRec(2);
+        sll.callSearchRec(4);
+    }
+
+    private void callSearchRec(int val) {
+        // only one method from below is needed
+        searchRecTail(head, val, -1);
+        System.out.println("Position: " + searchRec(head, val));
+    }
+
+    private int searchRec(Node head, int val) {
+        if (head == null) {
+            return -1;
+        }
+        
+        if (head.value == val)
+            return 1;
+        
+        int res = searchRec(head.next, val);
+        
+        if (res == -1) {
+            return -1;
+        } else {
+            return res + 1;
+        }
+        
+    }
+
+    private void searchRecTail(Node head, int val, int pos) {
+        if (head == null) {
+            System.out.println("Not found");
+            return;
+        }
+        
+        pos++;
+        
+        if (head.value == val) {
+            System.out.println("Found at index " + pos);
+            return;
+        }
+
+        searchRecTail(head.next, val, pos);
+    }
+
+    private void search(int val) {
+        if (head == null) {
+            System.out.println("Not found");
+            return;
+        }
+
+        Node cur = head;
+        int pos = -1;
+
+        while (cur != null) {
+            pos++;
+            if (cur.value == val) {
+                System.out.println("Found at index " + pos);
+                return;
+            }
+            cur = cur.next;
+        }
+
+        System.out.println("Not found");
     }
 
     private void insert(int pos, int val) {
