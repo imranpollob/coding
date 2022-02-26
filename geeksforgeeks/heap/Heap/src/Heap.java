@@ -28,8 +28,15 @@ public class Heap {
         h.print();
         h.decreaseKey(2, 1);
         h.print();
-        System.out.println(h.extractMin());
-        h.print();
+
+        System.out.println(h.size);
+        h.heapSort();
+    }
+
+    private void heapSort() {
+        while (size != 0) {
+            System.out.print(extractMin() + " ");
+        }
     }
 
     int left(int i) {
