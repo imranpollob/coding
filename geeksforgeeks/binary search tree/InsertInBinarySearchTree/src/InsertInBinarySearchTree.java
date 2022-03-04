@@ -35,9 +35,21 @@ public class InsertInBinarySearchTree {
 		iterativeInsert(root, 16);
 		iterativeInsert(root, 29);
 		iterativeInsert(root, 25);
+		
+		preorder(root);
 	}
 
-	private static Node iterativeInsert(Node root, int key) {
+	private static void preorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        
+        System.out.print(root.value + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    private static Node iterativeInsert(Node root, int key) {
 		Node temp = new Node(key);
 		Node cur = root;
 		Node parent = null;
