@@ -1,16 +1,29 @@
 # Various coding problem solutions
 
-Currently mainly focusing on Java solutions.
+I am keeping a track of my solved coding problems from different coding platforms like
+Leetcode, Hackerrank, Geeksforgeeks, Codesignal, Codewars etc.
 
-Necessary explanations added as a Markdown file.
+My languages of choice are Python, Java and Javascript. 
 
-Example:
+Necessary instructions, explanations and solutions are added on the Markdown file.
+Folders are used for Java problems.
+
+Project Structure:
 
 ```
+leetcode/
+	217. Contains Duplicate.md
+hackerrank/
+	problem solving/
+		algorithms/
+			Solve Me First.md
 geeksforgeeks/
+	math/
+		Missing number in array.md
 	sorting/
 		BubbleSort/
 			src/
 				BubbleSort.java
 				bubble sort.md
+
 ```
