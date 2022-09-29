@@ -12,7 +12,8 @@ Project Structure:
 
 ```
 leetcode/
-	217. Contains Duplicate.md
+	array/
+		217. Contains Duplicate.md
 hackerrank/
 	problem solving/
 		algorithms/
@@ -25,5 +26,8 @@ geeksforgeeks/
 			src/
 				BubbleSort.java
 				bubble sort.md
-
+codesignal/
+	arcade/
+		intro/
+			add.md
 ```
