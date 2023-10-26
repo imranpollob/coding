@@ -3,4 +3,5 @@ def rec(n):
         return 0
     return n % 10 + rec(n // 10)
 
+
 print(rec(12345))

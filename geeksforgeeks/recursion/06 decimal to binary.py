@@ -3,6 +3,7 @@ def rec(n):
         return
     rec(n // 2)
     print(n % 2)
-    
+
+
 # guess the output
 rec(7)
